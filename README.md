@@ -3,7 +3,7 @@
 
 ## This challenge will help you to:
 - Break down problems into implementable pseudocode
-- Implement a basic Ruby class and identify when to use instance variables
+- Implement a basic Python class and identify when to use instance variables
 - Use flow control and iteration where appropriate
 - Explain how instance variables and methods represent the characteristics and actions of an object
 
@@ -21,42 +21,37 @@ In this case, we're asking you to use symbols for `:low`, `:high`, and `:correct
 
 For example:
 
-```ruby
-game = GuessingGame.new(10)
+```python
+game = GuessingGame(10)
 
-game.solved?   # => false
+game.solved   # => False
 
-game.guess(5)  # => :low
-game.guess(20) # => :high
-game.solved?   # => false
+game.guess(5)  # => low
+game.guess(20) # => high
+game.solved   # => false
 
-game.guess(10) # => :correct
-game.solved?   # => true
+game.guess(10) # => correct
+game.solved   # => True
 ```
 
 Or:
 
-```ruby
-game = GuessingGame.new rand(100)
-last_guess  = nil
-last_result = nil
+```python
+import random
 
-until game.solved?
-  unless last_guess.nil?
-    puts "Oops!  Your last guess (#{last_guess}) was #{last_result}."
-    puts ""
-  end
+game = GuessingGame(random.randint(1,100))
+last_guess  = None
+last_result = None
 
-  print "Enter your guess: "
-  last_guess  = gets.chomp.to_i
+While game.solved == False
+  if last_guess not None 
+    print(f"Oops! Your last guess ({last_guess}) was {last_result}.")
+    print("")
+
+  last_guess  = input("Enter your guess: ")
   last_result = game.guess(last_guess)
-end
 
-puts "#{last_guess} was correct!"
+
+print(f"{last_guess} was correct!")
 ```
 
-Make sure your code passes the RSpec suite before moving on.
-
-## Stretch challenge
-
-Translate at least 3 of the RSpec tests into driver code. If the tests are failing to catch a problem, try writing your own driver test code for it. Does this give you any ideas about refactoring the solution?
