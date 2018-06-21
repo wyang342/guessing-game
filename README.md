@@ -43,8 +43,8 @@ game = GuessingGame(random.randint(1,100))
 last_guess  = None
 last_result = None
 
-While game.solved == False
-  if last_guess not None 
+While game.solved == False:
+  if last_guess not None: 
     print(f"Oops! Your last guess ({last_guess}) was {last_result}.")
     print("")
 
