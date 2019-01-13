@@ -13,11 +13,9 @@ Let's create a simple guessing game. Think in terms of when you were 7 and asked
 
 Your `GuessingGame` class should be initialized with an integer called `answer`.
 
-Define an instance method `GuessingGame#guess` which takes an integer called `guess` as its input. `guess` should return the symbol `:high` if the `guess` is larger than the `answer`, `:correct` if the `guess` is equal to the `answer`, and `:low` if the `guess` is lower than the `answer`.
+Define an instance method `GuessingGame#guess` which takes an integer called `guess` as its input. `guess` should return the string `high` if the `guess` is larger than the `answer`, `correct` if the `guess` is equal to the `answer`, and `low` if the `guess` is lower than the `answer`.
 
 Define an instance method `GuessingGame#solved?` which returns `true` if the most recent `guess` was correct and `false` otherwise.
-
-In this case, we're asking you to use symbols for `:low`, `:high`, and `:correct`. This is partly due to the way strings and symbols are stored in memory. If you're interested in more information, look it up!
 
 For example:
 
@@ -26,11 +24,11 @@ game = GuessingGame(10)
 
 game.solved   # => False
 
-game.guess(5)  # => low
-game.guess(20) # => high
-game.solved   # => false
+game.guess(5)  # => 'low'
+game.guess(20) # => 'high'
+game.solved   # => False
 
-game.guess(10) # => correct
+game.guess(10) # => 'correct'
 game.solved   # => True
 ```
 
