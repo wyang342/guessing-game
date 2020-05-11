@@ -18,6 +18,9 @@ Define an instance method `GuessingGame#solved` which returns `True` if the most
 For example:
 
 ```python
+# Define your GuessingGame class here...
+
+
 game = GuessingGame(10)
 
 game.solved()   # => False
@@ -35,12 +38,16 @@ Or:
 ```python
 import random
 
+# Define your GuessingGame class here...
+
+
+# ----- DRIVER CODE -----
 game = GuessingGame(random.randint(1,100))
 last_guess  = None
 last_result = None
 
-While game.solved == False:
-  if last_guess not None: 
+while game.solved() == False:
+  if last_guess != None: 
     print(f"Oops! Your last guess ({last_guess}) was {last_result}.")
     print("")
 
@@ -50,4 +57,3 @@ While game.solved == False:
 
 print(f"{last_guess} was correct!")
 ```
-
